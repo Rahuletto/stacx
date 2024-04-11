@@ -1,0 +1,69 @@
+.gjs-pn-panel {
+  position: relative;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.column {
+  min-height: 75px;
+  flex-grow: 1;
+  flex-basis: 100%;
+  overflow: auto;
+}
+
+.editor-clm {
+  display: flex;
+  flex-direction: column;
+}
+
+.gjs-blocks-c {
+  justify-content: center;
+  height: 50px;
+}
+
+.gjs-block {
+  width: auto;
+  font-size: 5px;
+  justify-content: center;
+  height: auto;
+  min-height: auto;
+}
+
+.gjs-block-label {
+  display: none;
+}
+
+.gjs-cv-canvas {
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.gjs-blocks-cs {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: none;
+}
+
+/* Theming */
+.gjs-one-bg {
+  background-color: #132a3a;
+}
+
+.gjs-two-color {
+  color: #10d48e;
+}
+
+.gjs-three-bg {
+  background-color: #10d48e;
+  color: white;
+}
+
+.gjs-four-color,
+.gjs-four-color-h:hover {
+  color: #1e8fe1;
+}

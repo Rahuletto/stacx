@@ -1,0 +1,33 @@
+{
+  "name": "stackr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@grapesjs/react": "^1.0.0",
+    "grapesjs": "^0.21.10",
+    "grapesjs-blocks-basic": "^1.0.2",
+    "grapesjs-plugin-forms": "^2.0.6",
+    "grapesjs-preset-webpage": "^1.0.3",
+    "grapesjs-style-bg": "^2.0.2",
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.4"
+  }
+}
