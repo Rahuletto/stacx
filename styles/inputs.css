@@ -1,0 +1,170 @@
+.Dropdown-root {
+  height: fit-content !important;
+}
+
+.Dropdown-control {
+  cursor: pointer;
+  border-radius: 8px !important;
+  background: var(--code-editor) !important;
+  padding: 6px 12px !important;
+  color: var(--color) !important;
+  font-weight: 500;
+  max-width: 150px;
+  font-size: 14px;
+  border: 0px none !important;
+  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-border-radius: 8px !important;
+  -moz-border-radius: 8px !important;
+  -ms-border-radius: 8px !important;
+  -o-border-radius: 8px !important;
+}
+
+.Dropdown-control:hover {
+  transform: scale(0.99);
+  -webkit-transform: scale(0.99);
+  -moz-transform: scale(0.99);
+  -ms-transform: scale(0.99);
+  -o-transform: scale(0.99);
+}
+
+.Dropdown-arrow-wrapper {
+  display: none;
+}
+
+.Dropdown-menu {
+  font-size: 14px;
+  min-width: 150px !important;
+
+  border-radius: 12px;
+  padding: 6px;
+  margin-top: 8px !important;
+  background: var(--background-light) !important;
+  color: var(--color-t);
+  font-weight: 500;
+  border: 0px none !important;
+  padding: 6px;
+  left: -5px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.Dropdown-option {
+  color: var(--color-t) !important;
+  border-radius: 6px;
+}
+
+.Dropdown-option:hover {
+  color: var(--color-t) !important;
+  background: var(--button-t) !important;
+  opacity: 0.8;
+}
+
+.Dropdown-option.is-selected {
+  color: var(--color) !important;
+  background: var(--button-t) !important;
+}
+
+.Dropdown-option:last-child {
+  border-bottom-right-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+}
+
+.props input {
+  background: var(--code-editor);
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+  color: var(--color);
+  font-size: 14px;
+  max-width: 80px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.input_rgba-wrap input {
+  background: var(--code-editor) !important;
+  border: none !important;
+  outline: none !important;
+  color: var(--color) !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  border-radius: 6px !important;
+  -webkit-border-radius: 6px !important;
+  -moz-border-radius: 6px !important;
+  -ms-border-radius: 6px !important;
+  -o-border-radius: 6px !important;
+}
+
+.swatch {
+  width: 25px;
+  height: 25px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.popover {
+  position: absolute;
+  top: 12%;
+  z-index: 100;
+  left: initial;
+  right: 250px;
+}
+.popup_tabs-header {
+    padding: 4px !important;
+    align-items: center !important;
+    
+}
+.default-color-panel_item {
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    -webkit-border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    -ms-border-radius: 8px !important;
+    -o-border-radius: 8px !important;
+}
+.popup_tabs-header-label {
+    height: 40px !important;
+    border-radius: 24px !important;
+    -webkit-border-radius: 24px !important;
+    -moz-border-radius: 24px !important;
+    -ms-border-radius: 24px !important;
+    -o-border-radius: 24px !important;
+}
+.popup_tabs, .popup_tabs-header {
+    border-radius: 22px !important;
+    -webkit-border-radius: 22px !important;
+    -moz-border-radius: 22px !important;
+    -ms-border-radius: 22px !important;
+    -o-border-radius: 22px !important;
+}
+.popup_tabs,
+.colorpicker, .color-picker-panel,
+.input_rgba, .popup_tabs-header {
+  background-color: var(--background-light) !important;
+}
+
+.input_rgba-label,  .popup_tabs-header-label {
+    color: var(--color-t) !important;
+}
+.popup_tabs-header-label-active {
+    background-color: var(--button-t) !important;
+    color: var(--color) !important;
+}
+.popover input {
+  max-width: fit-content !important;
+}

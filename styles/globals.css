@@ -2,12 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  font-family: var(--root-font);
 }
 
-.gjs-block svg {
-  width: 100%;
+:root {
+  --gjs-primary-color: #0c0c0c !important;
+  --background: #0c0c0c;
+  --background-light: #1a1a1a;
+  --code-editor: rgba(36, 36, 36, 0.548);
+  --border: #363636;
+  --button-t: rgba(54, 54, 54, 0.54);
+  --color: #e7e7e7;
+  --color-t: rgba(231, 231, 231, 0.6);
+
+  --red: #ef4444;
+}
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+/* scrollbar itself */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+html {
+  background: var(--background);
+}
+
+iframe {
+  border-radius: 12px;
+  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+}
+
+.header h1,
+.header h2,
+.header h3,
+.header p,
+.header span,
+.header button,
+.header a {
+  color: var(--color);
+}
+
+#layer-manager, #style-manager, #block-manager {
+  height: 91vh;
+  overflow:auto;
+
+}
+
+#style-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#layer-manager {
+  margin-right: 6px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }

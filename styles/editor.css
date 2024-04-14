@@ -1,69 +1,114 @@
-.gjs-pn-panel {
-  position: relative;
-}
-
-.row {
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-wrap: nowrap;
-}
-
-.column {
-  min-height: 75px;
-  flex-grow: 1;
-  flex-basis: 100%;
-  overflow: auto;
-}
-
-.editor-clm {
+.cont {
   display: flex;
   flex-direction: column;
+  width: calc(100vw - 250px) !important;
 }
 
-.gjs-blocks-c {
-  justify-content: center;
-  height: 50px;
+.props {
+  width: 250px;
+  height: 100vh;
+  background: var(--background);
 }
 
-.gjs-block {
-  width: auto;
-  font-size: 5px;
-  justify-content: center;
-  height: auto;
-  min-height: auto;
+.header {
+  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+
+  display: flex;
+  gap: 16px;
+  padding: 12px 24px;
+  justify-content: space-between;
 }
 
-.gjs-block-label {
-  display: none;
+.buttons {
+  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+
+  border: 1px solid var(--border);
+  padding: 2px;
+  display: flex;
+  gap: 2px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.tabbar {
+  display: flex;
+  padding: 12px 18px;
+  justify-content: space-between;
+}
+.tabbar button {
+  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  
+  color: var(--color-t);
+  padding: 8px 14px;
+  width: max-content;
+  border-radius: 8px;
+  font-size: 18px;
 }
 
-.gjs-cv-canvas {
-  width: 100%;
-  height: 100%;
-  top: 0;
+.buttons button {
+  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+
+  padding: 6px 16px;
+  color: var(--color-t);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.buttons button:hover,
+.config button:hover, .tabbar button:hover {
+  opacity: 0.6;
+}
+.buttons button.active,
+.buttons button:hover,
+.config button:hover,
+.config button.active, .tabbar button:hover, .tabbar button.active {
+  color: var(--color) !important;
+  background: var(--button-t) !important;
 }
 
-.gjs-blocks-cs {
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-top: none;
+.config, .tabbar {
+  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+
+  display: flex;
+  gap: 8px;
 }
 
-/* Theming */
-.gjs-one-bg {
-  background-color: #132a3a;
-}
+.config button {
+  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
 
-.gjs-two-color {
-  color: #10d48e;
-}
-
-.gjs-three-bg {
-  background-color: #10d48e;
-  color: white;
-}
-
-.gjs-four-color,
-.gjs-four-color-h:hover {
-  color: #1e8fe1;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 20px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
