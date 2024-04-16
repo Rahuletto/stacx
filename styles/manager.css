@@ -9,11 +9,11 @@
   text-align: left;
   border: none;
   outline: none;
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -33,11 +33,11 @@
   max-height: 0px;
   padding: 0px 12px;
   overflow: hidden;
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 }
 
 
@@ -56,11 +56,11 @@
 }
 
 .category {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
   width: 98%;
   border-radius: 14px;
   -webkit-border-radius: 14px;
@@ -107,11 +107,11 @@
 .radios button.active,
 .radios button:hover {
   color: var(--color) !important;
-  background: var(--button-t);
+  background: var(--button);
 }
 
 .composite {
-  border: 1px solid var(--border);
+  border: 1px solid var(--light);
   padding: 8px;
   border-radius: 16px;
   -webkit-border-radius: 16px;
@@ -124,15 +124,20 @@
   color: var(--color);
 }
 .layer-item {
+  border-radius: 10px;
   color: var(--color-t);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .layer-item-hover {
   color: var(--color);
   opacity: 0.5 !important;
-  background: var(--button-t);
+  background: var(--button);
 }
 
 .layer-item-select {
   color: var(--color);
-  background: var(--button-t);
+  background: var(--button);
 }

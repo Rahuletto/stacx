@@ -3,8 +3,9 @@ import { useEditor } from '@grapesjs/react';
 
 import type { Component } from 'grapesjs';
 import { MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
-import { BiDownArrow, BiMenu } from 'react-icons/bi';
+
 import { BsEyeFill, BsEyeSlash } from 'react-icons/bs';
+import { FaAngleDown } from 'react-icons/fa6';
 
 export declare interface LayerItemProps
     extends React.HTMLProps<HTMLDivElement> {
@@ -116,7 +117,7 @@ export default function LayerItem({
                         ].join(' ')}
                         onClick={toggleOpen}
                     >
-                        <BiDownArrow />
+                        <FaAngleDown />
                     </div>
                     <div className="truncate flex-grow" style={itemStyle}>
                         {name}

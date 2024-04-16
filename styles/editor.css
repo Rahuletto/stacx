@@ -1,36 +1,56 @@
 .cont {
   display: flex;
   flex-direction: column;
+  width: 99.5vw !important;
+  max-height: 99.5vh;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+}
+
+.gjs-editor-wrapper:has(.active-menu) .cont {
   width: calc(100vw - 250px) !important;
 }
 
 .props {
   width: 250px;
-  height: 100vh;
-  background: var(--background);
+  height: 99.5vh;
+  position: fixed;
+  right: -250px;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+}
+
+.active-menu {
+  right: 0px !important
 }
 
 .header {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 
   display: flex;
   gap: 16px;
   padding: 12px 24px;
   justify-content: space-between;
+  padding-right: 8px !important;
 }
 
 .buttons {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 
-  border: 1px solid var(--border);
   padding: 2px;
   display: flex;
   gap: 2px;
@@ -46,11 +66,11 @@
   justify-content: space-between;
 }
 .tabbar button {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
   
   color: var(--color-t);
   padding: 8px 14px;
@@ -60,19 +80,20 @@
 }
 
 .buttons button {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 
+  font-size: 20px;
   padding: 6px 16px;
   color: var(--color-t);
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 .buttons button:hover,
 .config button:hover, .tabbar button:hover {
@@ -83,26 +104,26 @@
 .config button:hover,
 .config button.active, .tabbar button:hover, .tabbar button.active {
   color: var(--color) !important;
-  background: var(--button-t) !important;
+  background: var(--button) !important;
 }
 
 .config, .tabbar {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 
   display: flex;
   gap: 8px;
 }
 
 .config button {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 
   padding: 8px;
   border-radius: 8px;

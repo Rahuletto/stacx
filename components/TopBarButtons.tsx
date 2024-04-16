@@ -4,7 +4,6 @@ import { IconType } from "react-icons";
 import { BsEyeFill } from "react-icons/bs";
 import { RxBorderNone } from "react-icons/rx";
 import { HiOutlineCodeBracketSquare } from "react-icons/hi2";
-import { FaFont } from "react-icons/fa";
 
 interface CommandButton {
   id: string;
@@ -15,6 +14,7 @@ interface CommandButton {
 
 export default function TopbarButtons({
   className,
+  children
 }: React.HTMLAttributes<HTMLDivElement>) {
   const editor = useEditor();
   const [, setUpdateCounter] = useState(0);
@@ -32,10 +32,7 @@ export default function TopbarButtons({
     {
       id: 'core:open-code',
       iconPath: HiOutlineCodeBracketSquare,
-    },{
-      id: 'open-fonts',
-      iconPath: FaFont,
-    },
+    }
   ];
 
   useEffect(() => {
@@ -74,6 +71,7 @@ export default function TopbarButtons({
           <cmd.iconPath />
         </button>
       ))}
+      {children}
     </div>
   );
 }

@@ -7,12 +7,14 @@
 }
 
 :root {
-  --gjs-primary-color: #0c0c0c !important;
-  --background: #0c0c0c;
-  --background-light: #1a1a1a;
-  --code-editor: rgba(36, 36, 36, 0.548);
-  --border: #363636;
-  --button-t: rgba(54, 54, 54, 0.54);
+  --left: #262626;
+  --right: #131313;
+
+  --light: #252525;
+  --gjs-primary-color: #131313 !important;
+
+  --code-editor: rgba(34, 34, 34, 0.611);
+  --button: rgba(54, 54, 54, 0.54);
   --color: #e7e7e7;
   --color-t: rgba(231, 231, 231, 0.6);
 
@@ -43,16 +45,16 @@
 }
 
 html {
-  background: var(--background);
+  background: linear-gradient(135deg, var(--left), var(--right))
 }
 
 iframe {
   border-radius: 12px;
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 }
 
 .header h1,
@@ -68,7 +70,6 @@ iframe {
 #layer-manager, #style-manager, #block-manager {
   height: 91vh;
   overflow:auto;
-
 }
 
 #style-manager {
@@ -79,9 +80,4 @@ iframe {
 
 #layer-manager {
   margin-right: 6px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }

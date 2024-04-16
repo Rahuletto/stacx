@@ -26,6 +26,8 @@ const mono = JetBrains_Mono({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  
+  
   return <>
     <style jsx global>
       {`
@@ -35,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
             }
           `}
     </style>
-    <Component {...pageProps} />
+      <Component {...pageProps} />
+    
   </>;
 }

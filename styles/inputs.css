@@ -12,12 +12,12 @@
   max-width: 150px;
   font-size: 14px;
   border: 0px none !important;
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
   -webkit-border-radius: 8px !important;
   -moz-border-radius: 8px !important;
   -ms-border-radius: 8px !important;
@@ -43,7 +43,7 @@
   border-radius: 12px;
   padding: 6px;
   margin-top: 8px !important;
-  background: var(--background-light) !important;
+  background: var(--right) !important;
   color: var(--color-t);
   font-weight: 500;
   border: 0px none !important;
@@ -61,13 +61,13 @@
 
 .Dropdown-option:hover {
   color: var(--color-t) !important;
-  background: var(--button-t) !important;
+  background: var(--button) !important;
   opacity: 0.8;
 }
 
 .Dropdown-option.is-selected {
   color: var(--color) !important;
-  background: var(--button-t) !important;
+  background: var(--button) !important;
 }
 
 .Dropdown-option:last-child {
@@ -108,7 +108,7 @@
   width: 25px;
   height: 25px;
   border-radius: 8px;
-  border: 2px solid var(--border);
+  border: 2px solid var(--light);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   -webkit-border-radius: 8px;
@@ -155,14 +155,14 @@
 .popup_tabs,
 .colorpicker, .color-picker-panel,
 .input_rgba, .popup_tabs-header {
-  background-color: var(--background-light) !important;
+  background-color: var(--lighter) !important;
 }
 
 .input_rgba-label,  .popup_tabs-header-label {
     color: var(--color-t) !important;
 }
 .popup_tabs-header-label-active {
-    background-color: var(--button-t) !important;
+    background-color: var(--button) !important;
     color: var(--color) !important;
 }
 .popover input {

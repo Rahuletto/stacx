@@ -3,12 +3,13 @@ import gjsblockbasic from 'grapesjs-blocks-basic'
 import plugin from 'grapesjs-style-bg';
 import 'grapick/dist/grapick.min.css';
 
-import { FaDesktop, FaTablet, FaMobile } from 'react-icons/fa6'
+import { FaDesktop, FaTablet, FaMobile, FaLaptop } from 'react-icons/fa6'
 
 import grapesjs, { Editor } from 'grapesjs';
 import GjsEditor, { Canvas } from '@grapesjs/react';
-import TopbarButtons from "./components/TopBarButtons";
-import Tabs from "./components/TabContent";
+import TopbarButtons from "../components/TopBarButtons";
+import Tabs from "../components/TabContent";
+import { TbLayoutSidebarRightExpandFilled } from "react-icons/tb";
 
 const escapeName = (name: string) => `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, '-');
 
@@ -51,6 +52,8 @@ export default function DefaultEditor() {
     editor?.setDevice(dev)
     setActive(dev)
   }
+
+  const [menu, setMenu] = useState(true)
 
 
   return (
@@ -111,9 +114,10 @@ export default function DefaultEditor() {
         <div className="cont">
           {editor &&
             <div className="header">
+            <span />
               <div className="buttons">
                 <button className={active === 'Desktop' ? "active" : 'button'} onClick={() => changeDevice('Desktop')}>
-                  <FaDesktop />
+                  <FaLaptop />
                 </button>
                 <button className={active === 'Tablet' ? "active" : 'button'} onClick={() => changeDevice('Tablet')}>
                   <FaTablet />
@@ -123,13 +127,15 @@ export default function DefaultEditor() {
                 </button>
               </div>
 
-              <TopbarButtons />
+              <TopbarButtons>
+                <button className={menu ? "active" : ""} onClick={() => setMenu((e) => !e)}><TbLayoutSidebarRightExpandFilled /></button>
+              </TopbarButtons>
             </div>
           }
 
           <Canvas />
         </div>
-        <div className="props">
+        <div className={`props ${menu ? "active-menu" : ""}`}>
           {editor && <Tabs />}
         </div>
       </GjsEditor>

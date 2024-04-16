@@ -14,7 +14,7 @@
   width: fit-content;
   border-radius: 12px;
   font-size: 12px !important;
-  background: var(--border) !important;
+  background: var(--light) !important;
   position: absolute;
   z-index: 2;
   bottom: 6px;
@@ -43,11 +43,11 @@
 }
 
 .gjs-mdl-dialog {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 
   border-radius: 24px !important;
   -webkit-border-radius: 24px !important;
@@ -113,7 +113,7 @@
 
 .gjs-toolbar {
   padding: 4px;
-  background: var(--background) !important;
+  background: var(--left) !important;
   color: var(--color) !important;
   border-radius: 6px !important;
   -webkit-border-radius: 6px !important;
@@ -130,11 +130,11 @@
 }
 
 .gjs-toolbar-item {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 
   display: flex !important;
   align-items: center;
@@ -148,7 +148,7 @@
 }
 
 .gjs-toolbar-item:hover {
-  background-color: var(--button-t);
+  background-color: var(--button);
 }
 
 .gjs-rte-action {
@@ -183,11 +183,11 @@
 }
 
 .gjs-btn-prim {
-  transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -webkit-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -moz-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -ms-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  -o-transition: 0.2s cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
 
   padding: 4px 12px !important;
   border-radius: 8px !important;
@@ -195,7 +195,7 @@
   -moz-border-radius: 8px !important;
   -ms-border-radius: 8px !important;
   -o-border-radius: 8px !important;
-  background-color: var(--button-t) !important;
+  background-color: var(--button) !important;
 }
 
 .gjs-btn-prim:hover {
