@@ -14,28 +14,26 @@ export default function CustomBlockManager({
   return (
     <div id="block-manager" className="text-left">
       {Array.from(mapCategoryBlocks).map(([category, blocks]) => (
-        <div key={category}>
-          <div className={['py-2 px-4 border-y'].join(' ')}>
+        <div id="category-block" key={category}>
+          <div className='name'>
             {category}
           </div>
-          <div className="grid grid-cols-2 gap-2 p-2">
+          <div className="flex flex-col gap-1 mt-2 block-container">
             {blocks.map((block) => (
               <div
                 key={block.getId()}
                 draggable
-                className={[
-                  'flex flex-col items-center border rounded cursor-pointer py-2 px-5 transition-colors',
-                ].join(' first-line:')}
+                className='block-box'
                 onDragStart={(ev) => dragStart(block, ev.nativeEvent)}
                 onDragEnd={() => dragStop(false)}
               >
                 <div
-                  className="h-10 w-10"
+                  id='icon'
                   dangerouslySetInnerHTML={{ __html: block.getMedia()! }}
                 />
 
                     <div
-                  className="h-10 w-10"
+                    id="text"
                   dangerouslySetInnerHTML={{ __html: block.getLabel()! }}
                 />
 

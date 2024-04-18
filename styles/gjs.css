@@ -209,3 +209,18 @@
 .gjs-tools .gjs-toolbar {
   display: none;
 }
+.gjs-am-add-field input {
+  display: none;
+}
+
+.gjs-am-add-asset button {
+  width: auto !important;
+}
+
+.gjs-am-file-uploader>form {
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}

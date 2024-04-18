@@ -3,17 +3,19 @@ import { Property, PropertyComposite, PropertyRadio, PropertySelect, PropertySli
 import { FaPlus } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa6";
 import { GrPowerReset } from "react-icons/gr";
-import Dropdown, { Option } from "react-dropdown";
+import { Dropdown } from "flowbite-react";
 
 import "react-dropdown/style.css";
 import { PopoverPicker } from "./PopoverPicker";
 
 interface StylePropertyFieldProps extends React.HTMLProps<HTMLDivElement> {
     prop: Property;
+    hideLabel?: boolean;
 }
 
 export default function StylePropertyField({
     prop,
+    hideLabel,
     ...rest
 }: StylePropertyFieldProps) {
     const handleChange = (value: string) => {
@@ -66,17 +68,18 @@ export default function StylePropertyField({
         case 'select':
             {
                 const selectProp = prop as PropertySelect;
-                const options: Option[] = []
-                selectProp.getOptions().map(e => {
-                    options.push({ label: e.label || e.name|| e.id, value: e.id || e.value || '' })
-                })
-                console.log(selectProp.getOptions())
+
                 inputToRender = (
-                    <Dropdown
-                        options={options}
+                    <Dropdown label={selectProp.getOptionLabel(valueWithDef)}
                         value={selectProp.getOptionLabel(valueWithDef)}
-                        onChange={(values) => onChange(values, values.value)}
-                    />
+                    >
+                        {
+                            selectProp.getOptions().map(e => (
+                                <Dropdown.Item className={selectProp?.getOptionLabel(valueWithDef) == e.label || selectProp?.getOptionLabel(valueWithDef) == e.name || selectProp?.getOptionLabel(valueWithDef) == e.id ? 'active-drop' : ''} onClick={() => onChange('select', e.id)} key={e.id} value={e.id || e.value || ''}>{e.label || e.name || e.id}</Dropdown.Item>
+                            ))
+                        }
+
+                    </Dropdown>
 
                 );
             }
@@ -106,15 +109,29 @@ export default function StylePropertyField({
         case 'composite':
             {
                 const compositeProp = prop as PropertyComposite;
-                inputToRender = (
+                const name = compositeProp.getName()
+                const props = compositeProp.getProperties()
+                if (props[0].getLabel().includes('Top')) inputToRender = (
                     <div
-                        className={'flex flex-wrap composite'}
+                        className={'box-composite'}
                     >
-                        {compositeProp.getProperties().map((prop) => (
-                            <StylePropertyField key={prop.getId()} prop={prop} />
+                        {name == 'border-radius' ? [props[0], null, props[1], null, null, null, props[3], null, props[2]].map((prop, i) => (
+                            prop ? <StylePropertyField key={prop.getId()} prop={prop} hideLabel={true} /> : <span key={i} className={i == 4 ? 'w-full center-block' : ''} />
+                        )) : [null, props[0], null, props[3], null, props[1], null, props[2], null].map((prop, i) => (
+                            prop ? <StylePropertyField key={prop.getId()} prop={prop} hideLabel={true} /> : <span key={i} className={i == 4 ? 'w-full center-block' : ''} />
                         ))}
                     </div>
-                );
+                )
+                else
+                    inputToRender = (
+                        <div
+                            className={'flex flex-wrap composite'}
+                        >
+                            {compositeProp.getProperties().map((prop) => (
+                                <StylePropertyField key={prop.getId()} prop={prop} />
+                            ))}
+                        </div>
+                    );
             }
             break;
         case 'stack':
@@ -142,7 +159,7 @@ export default function StylePropertyField({
                                     >
                                     </div>
                                     <button onClick={() => layer.remove()}>
-                                        <FaTrash style={{color: 'var(--red)'}} />
+                                        <FaTrash style={{ color: 'var(--red)' }} />
                                     </button>
                                 </div>
                                 {layer.isSelected() && (
@@ -160,14 +177,17 @@ export default function StylePropertyField({
             break;
     }
 
+    const label: string = prop.getLabel()
+
+
     return (
-        prop.getLabel() == 'Text shadow' ? <></> :
+        label == 'Text shadow' ? <></> :
             <div
                 {...rest}
-                className={['mb-3 px-1', prop.isFull() ? 'w-full' : ''].join(' ')}
+                className={['field-box', hideLabel ? '' : 'mb-3 px-1', prop.isFull() ? 'w-full' : ''].join(' ')}
             >
-                <div className={['flex mb-2 items-center justify-between', canClear && 'text-red-500'].join(' ')}>
-                    <div className="name">{prop.getLabel()}</div>
+                <div className={[hideLabel ? '' : 'flex mb-2 items-center justify-between', canClear && 'text-red-500'].join(' ')}>
+                    <div className="name">{hideLabel ? '' : label}</div>
                     {canClear && (
                         <button onClick={() => prop.clear()}>
                             <GrPowerReset />

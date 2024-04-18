@@ -40,19 +40,17 @@
   -o-transition: 0.2s ease-in-out;
 }
 
-
-
 .layer {
-    padding: 6px 16px;
-    cursor: grab;
+  padding: 6px 16px;
+  cursor: grab;
 }
 
 .layer svg {
-    font-size: 16px !important;
+  font-size: 16px !important;
 }
 
-.layer-manager:has(.layer:active ) {
-    cursor: grabbing;
+.layer-manager:has(.layer:active) {
+  cursor: grabbing;
 }
 
 .category {
@@ -140,4 +138,11 @@
 .layer-item-select {
   color: var(--color);
   background: var(--button);
+}
+.trait-box {
+  align-items: center;
+  justify-content: space-between;
+}
+.trait-box input {
+  max-width: 150px !important;
 }

@@ -47,6 +47,12 @@ export default function CustomLayerManager({
     const indicatorRef = useRef<HTMLDivElement>(null);
     const { Components } = editor;
 
+    function clearAll() {
+        const conf = confirm('This will clear everything in the canvas. Are you sure?')
+        if(conf) editor.runCommand('core:canvas-clear')
+          else return;
+      }
+
     const onDragStart = () => {
         setPointerDown(true);
     };
@@ -114,13 +120,12 @@ export default function CustomLayerManager({
 
     return (
         <div
-            id="layer-manager"
-            className="overflow-y-auto overflow-x-hidden text-sm text-left select-none relative"
-            style={wrapGridStyle}
+            id="layer-manager"   
+        >
+            <div className="w-full overflow-y-auto overflow-x-hidden text-sm text-left select-none relative" style={wrapGridStyle}
             onPointerDown={onDragStart}
             onPointerMove={onDragMove}
-            onPointerUp={onDragEnd}
-        >
+            onPointerUp={onDragEnd}>
             {!!root && (
                 <LayerItem
                     component={root}
@@ -136,6 +141,9 @@ export default function CustomLayerManager({
                     style={indicatorStyle}
                 ></div>
             )}
+            </div>
+            <button className='clearall' onClick={clearAll }>Clear all</button>
         </div>
+                
     );
 }

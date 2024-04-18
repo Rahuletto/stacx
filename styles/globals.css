@@ -13,12 +13,14 @@
   --light: #252525;
   --gjs-primary-color: #131313 !important;
 
+  --accent: #A3D9FF;
+
   --code-editor: rgba(34, 34, 34, 0.611);
   --button: rgba(54, 54, 54, 0.54);
   --color: #e7e7e7;
   --color-t: rgba(231, 231, 231, 0.6);
 
-  --red: #ef4444;
+  --red: #e54242;
 }
 
 
@@ -67,9 +69,16 @@ iframe {
   color: var(--color);
 }
 
-#layer-manager, #style-manager, #block-manager {
+#layer-manager, #style-manager, #block-manager,  #trait-manager {
   height: 91vh;
   overflow:auto;
+}
+
+#block-manager svg {
+  color: var(--color) !important;
+
+fill: var(--color) !important;
+
 }
 
 #style-manager {
@@ -80,4 +89,40 @@ iframe {
 
 #layer-manager {
   margin-right: 6px;
+}
+
+#block-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#selector-manager, #trait-manager, #block-manager, #layer-manager  {
+  padding: 4px 16px;
+  color: var(--color);
+  font-family: var(--root-font);
+}
+
+#layer-manager {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+hr{
+  border-color: #252525;
+}
+
+.clearall {
+  padding: 8px 16px;
+  background-color: var(--red);
+  color: var(--right);
+  font-weight: 700;
+  border-radius: 12px;
+  width: -webkit-fill-available;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }

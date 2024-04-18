@@ -1,15 +1,18 @@
 import {
   BlocksProvider,
   LayersProvider,
+  SelectorsProvider,
   StylesProvider,
-  useEditor,
+  TraitsProvider,
 } from "@grapesjs/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaPaintRoller, FaGear } from "react-icons/fa6";
 import { BsLayersHalf, BsFillGrid1X2Fill } from "react-icons/bs";
 import StyleManager from "./Managers/StyleManager";
 import LayerManager from "./Managers/LayerManager";
 import BlockManager from "./Managers/BlockManager";
+import SelectorManager from "./Managers/SelectorManager";
+import TraitManager from "./Managers/TraitManager";
 
 const tabItems = [
   {
@@ -37,7 +40,7 @@ const tabItems = [
 export default function Tabs({
   className,
 }: React.HTMLAttributes<HTMLDivElement>) {
-  const [tab, setTab] = useState(0);
+  const [tab, setTab] = useState(3);
 
   return (
     <>
@@ -56,6 +59,9 @@ export default function Tabs({
       </div>
 
       <div style={tab == 0 ? { display: "inherit" } : { display: "none" }}>
+        <SelectorsProvider>
+          {(props) => <SelectorManager {...props} />}
+        </SelectorsProvider>
         <StylesProvider>
           {(props) => <StyleManager {...props} />}
         </StylesProvider>
@@ -67,6 +73,12 @@ export default function Tabs({
         </LayersProvider>
       </div>
 
+      <div style={tab == 2 ? { display: "inherit" } : { display: "none" }}>
+        <TraitsProvider>
+          {(props) => <TraitManager {...props} />}
+        </TraitsProvider>
+      </div>
+      
       <div style={tab == 3 ? { display: "inherit" } : { display: "none" }}>
         <BlocksProvider>
           {(props) => <BlockManager {...props} />}
