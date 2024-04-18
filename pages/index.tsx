@@ -27,6 +27,7 @@ import { BiLink } from "react-icons/bi";
 import { IoImage } from "react-icons/io5";
 import { BsBlockquoteLeft } from "react-icons/bs";
 import { TfiLayoutColumn3Alt } from "react-icons/tfi";
+import { RxMargin } from "react-icons/rx";
 
 const escapeName = (name: string) =>
   `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, "-");
@@ -185,6 +186,13 @@ export default function DefaultEditor() {
                 content: "<p>Insert Text</p>",
                 category: "Basic",
                 media: renderToString(<PiTextTBold />),
+              },
+              {
+                id: "space",
+                label: "Space",
+                content: "<br />",
+                category: "Basic",
+                media: renderToString(<RxMargin />),
               },
               {
                 id: "link",
