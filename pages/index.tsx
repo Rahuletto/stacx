@@ -24,8 +24,9 @@ import { PiColumnsFill, PiTextTBold } from "react-icons/pi";
 import { BiLink } from "react-icons/bi";
 import { IoImage } from "react-icons/io5";
 import { BsBlockquoteLeft } from "react-icons/bs";
-import { TfiLayoutColumn3Alt } from "react-icons/tfi";
+
 import { RxMargin } from "react-icons/rx";
+import Head from "next/head";
 
 const escapeName = (name: string) =>
   `${name}`.trim().replace(/([^a-z0-9\w-:/]+)/gi, "-");
@@ -77,6 +78,11 @@ export default function DefaultEditor() {
 
   return (
     <main id="root">
+      <Head>
+        <title>Stacx</title>
+
+        <link rel="icon" href="/stacx.png" />
+      </Head>
       {editor && (
         <div
           dangerouslySetInnerHTML={{
