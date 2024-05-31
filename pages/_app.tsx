@@ -3,11 +3,12 @@ import "@/styles/editor.css";
 import "@/styles/gjs.css";
 import "@/styles/manager.css";
 import "@/styles/inputs.css";
+import "@/styles/silex.css";
 
 import type { AppProps } from "next/app";
-import { Manrope, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Darker_Grotesque } from "next/font/google";
 
-const mp = Manrope({
+const mp = Darker_Grotesque({
   fallback: ['system-ui', 'arial'],
   weight: ['500', '700'],
   display: 'swap',

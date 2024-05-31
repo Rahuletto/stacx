@@ -87,7 +87,7 @@ export default function LayerItem({
     };
 
     const wrapperCls = [
-        'layer-item flex flex-col',
+        `layer-item rounded-none flex flex-col ml-[${level * 18}px] border-l-2`,
         (!visible || isDragging) && 'opacity-60'
     ].join(' ')
 
@@ -104,16 +104,14 @@ export default function LayerItem({
                 <div
                     className={[
                         'layer flex items-center gap-1',
-
                         isHovered && 'layer-item-hover',
                         selected && 'layer-item-select'
-                    ].join(' ')}
-                >
+                    ].join(' ')}                >
                     <div
-                        style={{ marginLeft: `${level * 10}px` }}
+                        style={{ marginLeft: `${level * 2}px` }}
                         className={[
                             'cursor-pointer',
-                            !components.length && 'pointer-events-none opacity-0'
+                            !components.length && 'pointer-events-none hidden'
                         ].join(' ')}
                         onClick={toggleOpen}
                     >

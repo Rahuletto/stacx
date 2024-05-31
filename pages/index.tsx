@@ -11,8 +11,6 @@ import TopbarButtons from "../components/TopBarButtons";
 import Tabs from "../components/TabContent";
 import {
   TbClick,
-  TbColumns1,
-  TbColumns2,
   TbH1,
   TbH2,
   TbH3,
@@ -143,6 +141,9 @@ export default function DefaultEditor() {
             autosave: true,
             autoload: true,
             stepsBeforeSave: 1,
+          },
+          layerManager: {
+            sortable: true
           },
           selectorManager: { escapeName, componentFirst: true },
           plugins: [plugin, forms],

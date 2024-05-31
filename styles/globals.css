@@ -21,6 +21,7 @@
   --color-t: rgba(231, 231, 231, 0.6);
 
   --red: #e54242;
+  --green: #5dbf2f;
 }
 
 
@@ -76,9 +77,7 @@ iframe {
 
 #block-manager svg {
   color: var(--color) !important;
-
-fill: var(--color) !important;
-
+  fill: var(--color) !important;
 }
 
 #style-manager {

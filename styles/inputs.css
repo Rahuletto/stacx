@@ -33,6 +33,20 @@
   -ms-border-radius: 26px;
   -o-border-radius: 26px;
 }
+
+select {
+  background-color: var(--code-editor);
+  outline: none;
+  border: 0px;
+  padding: 4px 12px !important;
+  border-radius: 12px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
 button[data-testid="flowbite-dropdown-target"] {
   cursor: pointer;
   border-radius: 8px !important;

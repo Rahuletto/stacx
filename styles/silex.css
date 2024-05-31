@@ -1,0 +1,91 @@
+.silex-button {
+    margin: 18px;
+    background-color: var(--light);
+    padding: 6px 16px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.silex-form footer .silex-button {
+    margin: 6px !important;
+}
+
+.silex-form footer {
+    margin-top: 24px;
+}
+
+.silex-form {
+    padding: 12px 24px;
+}
+
+.silex-form__element h2 {
+    font-size: 18px;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.silex-form footer .silex-button[value="Cancel"] {
+background-color: var(--red);
+color: var(--right) !important;
+font-weight: 700;
+}
+
+.silex-form footer .silex-button[value="Save"] {
+    background-color: var(--green);
+    color: var(--right) !important;
+    font-weight: 700;
+    }
+
+    .silex-list  li {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 24px;
+        border-bottom: 1px solid var(--light);
+    }
+
+    .silex-list li .silex-list__item__body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    .silex-list li .silex-list__item__header {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .silex-list li fieldset legend {
+display: none !important;
+    }
+
+    .silex-list li fieldset div {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+    }
+
+    .silex-list li input[type="checkbox"] {
+        margin-right: 12px;
+        -webkit-appearance: none;
+        border-radius: 32px;
+        padding: 4px;
+        background-color: var(--light);
+        width: 32px;
+        height: 18px;
+        transition: all 0.2s ease-in-out;
+        -webkit-border-radius: 32px;
+        -moz-border-radius: 32px;
+        -ms-border-radius: 32px;
+        -o-border-radius: 32px;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+}
+
+.silex-list li input[type="checkbox"]:checked {
+    background-color: var(--green);
+}

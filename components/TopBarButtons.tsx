@@ -4,6 +4,7 @@ import { IconType } from "react-icons";
 import { BsEyeFill } from "react-icons/bs";
 import { RxBorderNone } from "react-icons/rx";
 import { HiOutlineCodeBracketSquare } from "react-icons/hi2";
+import { BiFont } from "react-icons/bi";
 
 interface CommandButton {
   id: string;
@@ -20,6 +21,10 @@ export default function TopbarButtons({
   const [, setUpdateCounter] = useState(0);
   const { Commands } = editor;
   const cmdButtons: CommandButton[] = [
+    {
+      id: "open-fonts",
+      iconPath: BiFont,
+    },
     {
       id: 'core:component-outline',
       iconPath: RxBorderNone,
