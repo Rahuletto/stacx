@@ -415,10 +415,10 @@ export default function DefaultEditor() {
     </main>
   ) : (
     <main
-      style={{ display: "flex", justifyItems: "center", alignItems: "center" }}
+      style={{ display: "flex", justifyItems: "center", alignItems: "center", height: '100vh' }}
       id="root"
     >
-      <h1 style={{ color: "#FFF", fontSize: 24, textAlign: "center" }}>
+      <h1 style={{ color: "#FFF", fontSize: 24, textAlign: "center", fontWeight: 700 }}>
         Oops. This only works in desktop at the moment.
       </h1>
     </main>
