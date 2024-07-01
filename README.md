@@ -1,4 +1,4 @@
-![Stacx](/public/stacx.png)
+![Stacx](/public/og.png)
 
 # ✏️ Stacx
 
