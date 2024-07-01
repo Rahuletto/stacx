@@ -11,7 +11,6 @@ import { FaTrash } from "react-icons/fa6";
 import { GrPowerReset } from "react-icons/gr";
 import { Dropdown } from "flowbite-react";
 
-import "react-dropdown/style.css";
 import { PopoverPicker } from "./PopoverPicker";
 
 interface StylePropertyFieldProps extends React.HTMLProps<HTMLDivElement> {
