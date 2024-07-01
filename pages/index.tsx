@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import plugin from "grapesjs-style-bg";
 import "grapick/dist/grapick.min.css";
 
@@ -34,6 +34,38 @@ const escapeName = (name: string) =>
 export default function DefaultEditor() {
   const [editor, setEditor] = useState<Editor | null>(null);
   const [active, setActive] = useState("Desktop");
+
+  const [mode, setMode] = useState<"desktop" | "mobile" | "tablet">("desktop");
+
+  useEffect(() => {
+    setMode(device());
+
+    function device() {
+      const screenWidth = document.body.clientWidth;
+
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isMobile = /iphone|ipod|android|windows phone/g.test(userAgent);
+      const isTablet =
+        /(ipad|tablet|playbook|silk)|(android(?!.*mobile))/g.test(userAgent);
+
+      if (screenWidth < 768 || isMobile) {
+        return "mobile";
+      } else if ((screenWidth >= 768 && screenWidth <= 1024) || isTablet) {
+        return "tablet";
+      } else {
+        return "desktop";
+      }
+    }
+    const handleResize = () => {
+      const newDeviceType = device();
+      if (mode != newDeviceType) setMode(newDeviceType);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [mode]);
 
   const onEditor = (e: Editor) => {
     e.StyleManager.removeProperty("decorations", "background-color");
@@ -76,7 +108,7 @@ export default function DefaultEditor() {
 
   const [menu, setMenu] = useState(true);
 
-  return (
+  return mode === "desktop" ? (
     <main id="root">
       <Head>
         <title>Stacx</title>
@@ -149,7 +181,7 @@ export default function DefaultEditor() {
             stepsBeforeSave: 1,
           },
           layerManager: {
-            sortable: true
+            sortable: true,
           },
           selectorManager: { escapeName, componentFirst: true },
           plugins: [plugin, forms],
@@ -380,6 +412,15 @@ export default function DefaultEditor() {
           {editor && <Tabs />}
         </div>
       </GjsEditor>
+    </main>
+  ) : (
+    <main
+      style={{ display: "flex", justifyItems: "center", alignItems: "center" }}
+      id="root"
+    >
+      <h1 style={{ color: "#FFF", fontSize: 24, textAlign: "center" }}>
+        Oops. This only works in desktop at the moment.
+      </h1>
     </main>
   );
 }
